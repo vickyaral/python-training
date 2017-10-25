@@ -13,6 +13,7 @@ language. The speech patterns you actually hear decode the brainwave
 matrix which has been fed into your mind by your Babel fish.
 """
 
+
 # Write a python program to print the three most common words from the
 # text above
 
@@ -41,4 +42,18 @@ tuple_list.sort(key=sort_by_count,reverse=True)
 print tuple_list[:3]
 
     
+
+def word_count(word_count_pair):
+    return word_count_pair[1]
+
+frequency = {}
+for word in excerpt.split():
+    try:
+        frequency[word] += 1
+    except KeyError:
+        frequency[word] = 1
+
+items = list(frequency.items())
+items.sort(key=word_count, reverse=True)
+print(items[:3])
 
